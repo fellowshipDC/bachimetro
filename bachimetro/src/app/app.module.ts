@@ -30,6 +30,7 @@ import { TweetsComponent } from './tweets/tweets.component';
     AppRoutingModule,
     FormsModule,
     HttpModule,
+    HttpModule,
     RouterModule.forRoot([
       {
         path: 'info',
