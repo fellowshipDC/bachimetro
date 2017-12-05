@@ -1,6 +1,6 @@
 # bachimetro
 
-# ¿Cómo utilizar las APIs REST y Streming de Twitter?
+# ¿Cómo utilizar las APIs REST y Streaming de Twitter?
 
 1. Crear una app en [apps.twitter.com](apps.twitter.com)
 [https://developer.twitter.com/en/docs/basics/authentication/overview/application-only](https://developer.twitter.com/en/docs/basics/authentication/overview/application-only)
