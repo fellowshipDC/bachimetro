@@ -13,6 +13,8 @@ import { MainComponent } from './main/main.component';
 import { InfoComponent } from './info/info.component';
 import { AboutComponent } from './about/about.component';
 import { TweetsComponent } from './tweets/tweets.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -23,13 +25,14 @@ import { TweetsComponent } from './tweets/tweets.component';
     MainComponent,
     InfoComponent,
     AboutComponent,
-    TweetsComponent
+    TweetsComponent,
+    NavbarComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
     HttpModule,
     RouterModule.forRoot([
       {

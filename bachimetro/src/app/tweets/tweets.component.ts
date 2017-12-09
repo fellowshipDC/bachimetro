@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, HttpModule, Response } from '@angular/http';
+declare const google : any;
+declare const map: any;
 
 @Component({
   selector: 'app-tweets',
@@ -7,13 +9,22 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./tweets.component.styl']
 })
 
-/* Get latest tweets about 'baches' */
+/* Get latest tweets about 'baches' & displays on Google Map*/
 
 export class TweetsComponent implements OnInit {
 
-  constructor(private http: Http) { }
-
-  ngOnInit() {
+  constructor() {  
   }
-
-}
+  
+  ngOnInit() {
+    function initMap() {
+      var center = {lat: 19.432608, lng: -99.133209};
+      var bounds = new google.maps.LatLngBounds();
+      var map = new google.maps.Map(document.getElementById('gmap'), {
+        zoom: 5,
+        center: center
+      });
+    }
+    initMap();0
+  }
+}  
