@@ -16,10 +16,18 @@ export class AppComponent {
     this.getTweets();
   }
 
-  private bearclaws = {"access_token":"<Bearer> AAAAAAAAAAAAAAAAAAAAANxN3QAAAAAASPfkYaEsbzos4GzCvdR9tLQV%2BXU%3DZ9rsMl6Fy4U9VvpauaMFDKBLr2ViBHy2QFQxlJuVEgw0ZAZYR1"};
+  // private bearclaws = {"access_token":"<Bearer> AAAAAAAAAAAAAAAAAAAAANxN3QAAAAAASPfkYaEsbzos4GzCvdR9tLQV%2BXU%3DZ9rsMl6Fy4U9VvpauaMFDKBLr2ViBHy2QFQxlJuVEgw0ZAZYR1"};
 
   private getTweets(){
-    return this.http.get('https://api.twitter.com/1.1/search/tweets.json?q=%23bachimetro',)
+    return this.http
+    .get('https://api.twitter.com/1.1/search/tweets.json?q=%23bachimetro',
+      {
+        params : {
+          token_type : "bearer",
+          access_token : "AAAAAAAAAAAAAAAAAAAAANxN3QAAAAAASPfkYaEsbzos4GzCvdR9tLQV%2BXU%3DZ9rsMl6Fy4U9VvpauaMFDKBLr2ViBHy2QFQxlJuVEgw0ZAZYR1"  
+        },
+      }
+    )
     .map((res : Response) => res.json())
       .subscribe(data => {
         this.data = data;
