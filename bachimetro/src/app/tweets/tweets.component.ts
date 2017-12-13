@@ -25,6 +25,6 @@ export class TweetsComponent implements OnInit {
         center: center
       });
     }
-    initMap();0
+    initMap();
   }
 }  

@@ -15,6 +15,8 @@ import { AboutComponent } from './about/about.component';
 import { TweetsComponent } from './tweets/tweets.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MapComponent } from './map/map.component';
+import { ContactComponent } from './contact/contact.component';
+import { GraphBarComponent } from './graph-bar/graph-bar.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { MapComponent } from './map/map.component';
     AboutComponent,
     TweetsComponent,
     NavbarComponent,
-    MapComponent
+    MapComponent,
+    ContactComponent,
+    GraphBarComponent
   ],
   imports: [
     BrowserModule,
