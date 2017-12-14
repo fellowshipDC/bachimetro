@@ -3,6 +3,7 @@ import { Http, HttpModule, Response } from '@angular/http';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs/Observable';
 import * as Rx from 'rxjs/Rx';
+import { HttpClient } from '@angular/common/http';
 
 declare const google : any;
 declare const map: any;
@@ -19,10 +20,24 @@ declare var heatmap : any;
 
 export class TweetsComponent implements OnInit {
 
-  constructor() {  
+  url = 'http://localhost:3000/tweets';
+
+  constructor(private http: HttpClient) {
   }
-  
+
   ngOnInit() {
+
+    this.http
+    .get(this.url)
+    .subscribe(
+      res => {
+        console.log(res, 'ok');
+      },
+      err => {
+        console.log('error');
+      }
+    );
+
     //Setup Google Map
     function initMap() {
         //Setup Google Map
@@ -39,9 +54,9 @@ export class TweetsComponent implements OnInit {
     styles: light_grey_style
   };
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  
+
   //Setup heat map and link to Twitter array we will append data to
-  
+
   var liveTweets = new google.maps.MVCArray();
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: liveTweets,
@@ -53,7 +68,7 @@ export class TweetsComponent implements OnInit {
     // Storage for WebSocket connections
     var socket = io.connect('/');
 
-    // This listens on the "twitter-steam" channel and data is 
+    // This listens on the "twitter-steam" channel and data is
     // received everytime a new tweet is receieved.
     socket.on('twitter-stream', function (data) {
 
@@ -74,11 +89,11 @@ export class TweetsComponent implements OnInit {
 
     });
 
-    // Listens for a success response from the server to 
+    // Listens for a success response from the server to
     // say the connection was successful.
     socket.on("connected", function(r) {
 
-      //Now that we are connected to the server let's tell 
+      //Now that we are connected to the server let's tell
       //the server we are ready to start receiving tweets.
       socket.emit("start tweets");
     });
@@ -87,4 +102,4 @@ export class TweetsComponent implements OnInit {
 
     initMap();
   }
-}  
+}
