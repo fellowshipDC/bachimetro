@@ -18,6 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MapComponent } from './map/map.component';
 import { ContactComponent } from './contact/contact.component';
 import { GraphBarComponent } from './graph-bar/graph-bar.component';
+import { DefinitionComponent } from './definition/definition.component';
+import { StreetsComponent } from './streets/streets.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { GraphBarComponent } from './graph-bar/graph-bar.component';
     NavbarComponent,
     MapComponent,
     ContactComponent,
-    GraphBarComponent
+    GraphBarComponent,
+    DefinitionComponent,
+    StreetsComponent
   ],
   imports: [
     BrowserModule,
