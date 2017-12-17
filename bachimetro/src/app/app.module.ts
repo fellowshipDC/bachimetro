@@ -20,6 +20,8 @@ import { ContactComponent } from './contact/contact.component';
 import { GraphBarComponent } from './graph-bar/graph-bar.component';
 import { DefinitionComponent } from './definition/definition.component';
 import { StreetsComponent } from './streets/streets.component';
+import { LastTweetsComponent } from './last-tweets/last-tweets.component';
+import { TweetitComponent } from './tweetit/tweetit.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { StreetsComponent } from './streets/streets.component';
     ContactComponent,
     GraphBarComponent,
     DefinitionComponent,
-    StreetsComponent
+    StreetsComponent,
+    LastTweetsComponent,
+    TweetitComponent
   ],
   imports: [
     BrowserModule,
