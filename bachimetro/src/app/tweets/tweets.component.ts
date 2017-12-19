@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 declare var $: any;
 declare var google: any;
 
-
 @Component({
   selector: 'app-tweets',
   templateUrl: './tweets.component.html',
@@ -271,7 +270,7 @@ export class TweetsComponent implements OnInit {
       (res: any) => {
         console.log(res, 'ok');
         let map = this.initMap();
-
+        
         res.body.statuses.map(status => {
           if (status.geo !== null) {
             this.addMarker(map, status.geo.lng, status.geo.lat);
